@@ -1,0 +1,27 @@
+# Segreti e configurazioni locali: la repository è pubblica, niente di tutto questo deve finire qui
+.env
+.env.*
+.dev.vars
+*.pem
+*.key
+
+# Strumenti
+node_modules/
+.wrangler/
+.DS_Store
+Thumbs.db
+
+# Originali fotografici: restano su Drive, mai nella repository
+originals/
+originali/
+*.tif
+*.tiff
+*.psd
+*.psb
+*.raw
+*.cr2
+*.cr3
+*.nef
+*.arw
+*.dng
+*.heic

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claudia Mazza · Fotografa</title>
+  <meta name="description" content="[DA SCRIVERE] Portfolio di Claudia Mazza, fotografa. Una frase che dice cosa fotografa e dove lavora.">
+  <meta name="robots" content="noindex"><!-- TOGLIERE al lancio, quando il sito è pronto e il dominio è collegato -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Claudia Mazza · Fotografa">
+  <meta property="og:description" content="[DA SCRIVERE] Stessa frase della description.">
+  <!-- TODO: og:image (1200x630, da una foto scelta da Claudia) e og:url quando il dominio è deciso -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Claudia Mazza",
+    "jobTitle": "Fotografa"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#lavori">Vai ai contenuti</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top">Claudia Mazza</a>
+    <nav aria-label="Principale">
+      <a href="#lavori">Lavori</a>
+      <a href="#chi-sono">Chi sono</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Fotografa</p>
+      <h1>Claudia Mazza</h1>
+      <p class="lead ph">[DA SCRIVERE] Una riga che dice che fotografia fa. Arriva da Contenuti di Testo.</p>
+    </section>
+
+    <section id="lavori" class="works" aria-labelledby="lavori-t">
+      <h2 id="lavori-t">Lavori</h2>
+
+      <!--
+        UNA SERIE = un blocco <section class="series"> come questo.
+        UNA FOTO = un <figure> con --w e --h uguali a larghezza e altezza reali dell'immagine (servono a
+        tenere le proporzioni senza ritagliare). Il comando `node tools/optimize-images.mjs` stampa
+        già il blocco pronto, vedi docs/WORKFLOW.md. Qui sotto ci sono solo segnaposto.
+      -->
+      <section class="series" aria-labelledby="serie-1">
+        <header>
+          <h3 id="serie-1">Titolo della serie 1</h3>
+          <p class="ph">[DA SCRIVERE] Due righe sulla serie: anno, luogo, di cosa parla.</p>
+        </header>
+        <div class="gallery">
+          <figure class="photo ph-img" style="--w:3;--h:2"><span>Foto 1</span></figure>
+          <figure class="photo ph-img" style="--w:2;--h:3"><span>Foto 2</span></figure>
+          <figure class="photo ph-img" style="--w:3;--h:2"><span>Foto 3</span></figure>
+          <figure class="photo ph-img" style="--w:1;--h:1"><span>Foto 4</span></figure>
+          <figure class="photo ph-img" style="--w:3;--h:2"><span>Foto 5</span></figure>
+        </div>
+      </section>
+
+      <section class="series" aria-labelledby="serie-2">
+        <header>
+          <h3 id="serie-2">Titolo della serie 2</h3>
+          <p class="ph">[DA SCRIVERE] Due righe sulla serie.</p>
+        </header>
+        <div class="gallery">
+          <figure class="photo ph-img" style="--w:2;--h:3"><span>Foto 1</span></figure>
+          <figure class="photo ph-img" style="--w:3;--h:2"><span>Foto 2</span></figure>
+          <figure class="photo ph-img" style="--w:2;--h:3"><span>Foto 3</span></figure>
+          <figure class="photo ph-img" style="--w:3;--h:2"><span>Foto 4</span></figure>
+        </div>
+      </section>
+    </section>
+
+    <section id="chi-sono" class="about" aria-labelledby="chi-t">
+      <h2 id="chi-t">Chi sono</h2>
+      <div class="about-grid">
+        <figure class="portrait ph-img" style="--w:4;--h:5"><span>Ritratto</span></figure>
+        <div class="prose ph">
+          <p>[DA SCRIVERE] Biografia di Claudia (circa 150-250 parole), dalla cartella Contenuti di Testo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatti" class="contact" aria-labelledby="contatti-t">
+      <h2 id="contatti-t">Contatti</h2>
+      <p class="ph">[DA SCRIVERE] Frase di invito: per progetti, collaborazioni, richieste.</p>
+      <p><a class="mail" href="mailto:info@example.com">info@example.com</a> <span class="ph">[email da confermare]</span></p>
+      <ul class="social">
+        <li><a href="#">Instagram</a> <span class="ph">[link da confermare]</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="anno">2026</span> Claudia Mazza. Tutte le fotografie sono protette dal diritto d'autore, ogni uso richiede un accordo scritto.</p>
+    <p class="ph">[DA CONFERMARE] P.IVA e dati di legge, se Claudia fattura come professionista.</p>
+  </footer>
+
+  <dialog id="lightbox" aria-label="Foto ingrandita">
+    <button type="button" class="lb-close" aria-label="Chiudi">×</button>
+    <button type="button" class="lb-prev" aria-label="Foto precedente">‹</button>
+    <img alt="">
+    <button type="button" class="lb-next" aria-label="Foto successiva">›</button>
+    <p class="lb-caption"></p>
+  </dialog>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

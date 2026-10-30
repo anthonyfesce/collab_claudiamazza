@@ -1,0 +1,10 @@
+{
+  // Sito statico su Cloudflare Workers (static assets). Nessun codice server.
+  // La pubblicazione è automatica: Workers Builds esegue `npx wrangler deploy` a ogni push su main.
+  "name": "claudiamazza-site",
+  "compatibility_date": "2026-10-30",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "claudiamazza-tools",
+  "private": true,
+  "type": "module",
+  "description": "Strumenti locali per preparare le foto. Non fanno parte del sito e non girano su Cloudflare.",
+  "dependencies": {
+    "sharp": "^0.34.0"
+  }
+}
