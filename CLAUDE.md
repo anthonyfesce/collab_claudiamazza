@@ -27,6 +27,9 @@ Quando il sito è online la repository diventa privata: Cloudflare Workers Build
 Cartella radice "Drive" ID `0AFI0E0kFHMNKUk9PVA`, dentro `Creazione Sito` (`1aazwQEwihI1QcaTSkyKcwJ4En2JbnmwQ`) con: Archivio Fotografico, Contenuti di Testo, References Siti Internet, Accessi Sito, Indicazioni, Output.
 Nella radice stanno la "Guida dominio e hosting Cloudflare per il sito" e "Indicazioni da Claude" (diario datato per Claudia, voce più recente in alto).
 
+### Chi ha scritto cosa nei documenti Drive
+Claudia scrive nei documenti in carattere nero normale. Tutto ciò che scrive Claude è in **verde** (RGB 0.1, 0.5, 0.25), con una riga di legenda in cima al documento. Quando si aggiunge testo a un documento condiviso con lei: colorare di verde solo il testo nuovo di Claude, non modificare né ricolorare il suo, e preferire una scheda (tab) o una sezione separata. Prima di rispondere a Claudia, rileggere il documento e distinguere i due autori dal colore. Documenti già marcati: "References Claude". "Indicazioni da Claude" è interamente di Claude: se Claudia comincia a scriverci, marcare anche quello.
+
 ## Regole di lavoro
 - Contenuti veri solo da Drive. Se manca un testo o una foto, resta il segnaposto `[DA SCRIVERE]` e si segna in "Indicazioni da Claude". Non inventare testi, date, premi, clienti o prezzi.
 - Ogni `<img>` ha `alt` descrittivo, `width` e `height`; sotto la prima schermata `loading="lazy"`.

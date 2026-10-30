@@ -13,7 +13,7 @@ Aggiornato il 30 ottobre 2026.
 - **noindex** attivo fino al lancio.
 
 ## Domande aperte per Anthony
-1. Il sito è solo in italiano o anche in inglese?
+1. ~~Lingua~~ Deciso da Anthony il 30 ottobre 2026: solo italiano.
 2. Che tipo di fotografia fa Claudia (ritratto, reportage, matrimoni, fine art, commerciale)? Cambia l'ordine delle sezioni e cosa si mette in primo piano.
 3. Il sito deve solo mostrare i lavori e farla contattare, o anche vendere stampe / prenotare servizi?
 4. Dominio: scelta e nome Worker (`claudiamazza-site` provvisorio).
