@@ -16,7 +16,7 @@ Quello che entra qui lo può leggere chiunque, anche se poi cancellato (resta ne
 Quando il sito è online la repository diventa privata: Cloudflare Workers Builds e Claude Code continuano a funzionare con il collegamento GitHub già autorizzato.
 
 ## Struttura
-- `public/`: il sito, esattamente ciò che viene pubblicato. `index.html`, `css/style.css`, `js/main.js`, `images/<serie>/`, `_headers`.
+- `public/`: il sito, esattamente ciò che viene pubblicato. `index.html`, `css/style.css`, `js/main.js`, `fonts/`, `images/<serie>/`, `_headers`. In `images/demo/` ci sono immagini di PROVA generate da codice: vanno sostituite dalle foto di Claudia e la cartella cancellata.
 - `wrangler.jsonc`: configurazione Cloudflare (cartella `public`, pagina 404).
 - `tools/`: strumenti locali (ottimizzazione foto). Non fanno parte del sito.
 - `scripts/check-repo.sh`: controllo prima del commit.

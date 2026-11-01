@@ -20,4 +20,13 @@ Aggiornato il 30 ottobre 2026.
 5. Claudia ha partita IVA? Se sì, servono ragione sociale, P.IVA e indirizzo in fondo al sito.
 
 ## Reference estetiche
-Nessuna ancora in `References Siti Internet`. Le proposte di Claude, quando approvate da Anthony, vanno nel documento "References Claude" nella stessa cartella.
+Claudia ha indicato (1 novembre 2026, Scheda 2 di "References Claude") un sito Awwwards: [Beauty Creative Team Bibibi](https://www.awwwards.com/sites/beauty-creative-team-bibibi-web-site). Da quello che ha scritto le piace: scritta minimale ma con carattere in prima pagina, poche parole e molte immagini, ogni galleria con una copertina d'impatto e un titolo, tutto simmetrico e facile da scorrere. Il sito non è raggiungibile dalla sessione di Claude (rete), quindi l'impaginazione parte dalla sua descrizione e non da una copia del sito.
+
+Impaginazione attuale (provvisoria, con immagini di prova):
+- Prima pagina: immagine a tutto schermo e nome in Cormorant Garamond (peso 300, "Mazza" in corsivo).
+- Lavori: griglia 2x2 simmetrica di copertine 4:5 con titolo; ogni copertina apre la serie a tutto schermo (`:target`, funziona anche senza JavaScript, link condivisibili `#serie-1`).
+- Dentro la serie: righe di foto senza ritagli, foto grande con frecce da tastiera.
+- Sezioni Chi sono, Servizi (di cosa mi occupo / come lavoro / cosa non faccio) e Contatti.
+- Carattere: Cormorant Garamond (licenza OFL, ospitato in `public/fonts/`, niente Google Fonts per evitare problemi di privacy).
+
+Le immagini di prova stanno in `public/images/demo/` e sono generate da `tools/make-demo-images.mjs`: non sono fotografie, vanno cancellate quando arrivano quelle di Claudia.
