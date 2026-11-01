@@ -6,9 +6,7 @@
   <title>Claudia Mazza · Fotografa</title>
   <meta name="description" content="[DA SCRIVERE] Portfolio di Claudia Mazza, fotografa. Una frase che dice cosa fotografa e dove lavora.">
   <meta name="robots" content="noindex"><!-- TOGLIERE al lancio, quando il sito è pronto e il dominio è collegato -->
-  <meta name="theme-color" content="#f6f4f0">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="/fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
 
   <meta property="og:type" content="website">
@@ -27,252 +25,83 @@
   </script>
 </head>
 <body>
-  <a class="skip" href="#lavori">Vai ai lavori</a>
+  <a class="skip" href="#lavori">Vai ai contenuti</a>
 
   <header class="site-header">
     <a class="brand" href="#top">Claudia Mazza</a>
     <nav aria-label="Principale">
       <a href="#lavori">Lavori</a>
       <a href="#chi-sono">Chi sono</a>
-      <a href="#servizi">Servizi</a>
       <a href="#contatti">Contatti</a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero" aria-label="Presentazione">
-      <img class="hero-img" src="/images/demo/hero.webp" width="2400" height="1400" alt="Immagine di prova per la prima pagina">
-      <div class="hero-text">
-        <h1><span>Claudia</span> <em>Mazza</em></h1>
-        <p class="eyebrow">Fotografa</p>
-        <p class="lead ph">[DA SCRIVERE] Una riga sola.</p>
-      </div>
-      <a class="scroll-hint" href="#lavori" aria-label="Vai ai lavori">Lavori ↓</a>
+    <section class="hero">
+      <p class="eyebrow">Fotografa</p>
+      <h1>Claudia Mazza</h1>
+      <p class="lead ph">[DA SCRIVERE] Una riga che dice che fotografia fa. Arriva da Contenuti di Testo.</p>
     </section>
 
     <section id="lavori" class="works" aria-labelledby="lavori-t">
-      <h2 id="lavori-t" class="section-title">Lavori</h2>
-      <!-- Ogni copertina apre la serie (sezione .series-view con lo stesso id). Per aggiungere una serie
-           si copia una coppia copertina + serie-view. Vedi docs/WORKFLOW.md. -->
-      <div class="covers">
-        <a class="cover" href="#serie-1">
-          <img src="/images/demo/serie-1-cover.webp" width="1000" height="1250" alt="Immagine di prova: copertina della serie 1" loading="lazy">
-          <span class="cover-title">Titolo della serie 1</span>
-        </a>
-        <a class="cover" href="#serie-2">
-          <img src="/images/demo/serie-2-cover.webp" width="1000" height="1250" alt="Immagine di prova: copertina della serie 2" loading="lazy">
-          <span class="cover-title">Titolo della serie 2</span>
-        </a>
-        <a class="cover" href="#serie-3">
-          <img src="/images/demo/serie-3-cover.webp" width="1000" height="1250" alt="Immagine di prova: copertina della serie 3" loading="lazy">
-          <span class="cover-title">Titolo della serie 3</span>
-        </a>
-        <a class="cover" href="#serie-4">
-          <img src="/images/demo/serie-4-cover.webp" width="1000" height="1250" alt="Immagine di prova: copertina della serie 4" loading="lazy">
-          <span class="cover-title">Titolo della serie 4</span>
-        </a>
-      </div>
+      <h2 id="lavori-t">Lavori</h2>
+
+      <!--
+        UNA SERIE = un blocco <section class="series"> come questo.
+        UNA FOTO = un <figure> con --w e --h uguali a larghezza e altezza reali dell'immagine (servono a
+        tenere le proporzioni senza ritagliare). Il comando `node tools/optimize-images.mjs` stampa
+        già il blocco pronto, vedi docs/WORKFLOW.md. Qui sotto ci sono solo segnaposto.
+      -->
+      <section class="series" aria-labelledby="serie-1">
+        <header>
+          <h3 id="serie-1">Titolo della serie 1</h3>
+          <p class="ph">[DA SCRIVERE] Due righe sulla serie: anno, luogo, di cosa parla.</p>
+        </header>
+        <div class="gallery">
+          <figure class="photo ph-img" style="--w:3;--h:2"><span>Foto 1</span></figure>
+          <figure class="photo ph-img" style="--w:2;--h:3"><span>Foto 2</span></figure>
+          <figure class="photo ph-img" style="--w:3;--h:2"><span>Foto 3</span></figure>
+          <figure class="photo ph-img" style="--w:1;--h:1"><span>Foto 4</span></figure>
+          <figure class="photo ph-img" style="--w:3;--h:2"><span>Foto 5</span></figure>
+        </div>
+      </section>
+
+      <section class="series" aria-labelledby="serie-2">
+        <header>
+          <h3 id="serie-2">Titolo della serie 2</h3>
+          <p class="ph">[DA SCRIVERE] Due righe sulla serie.</p>
+        </header>
+        <div class="gallery">
+          <figure class="photo ph-img" style="--w:2;--h:3"><span>Foto 1</span></figure>
+          <figure class="photo ph-img" style="--w:3;--h:2"><span>Foto 2</span></figure>
+          <figure class="photo ph-img" style="--w:2;--h:3"><span>Foto 3</span></figure>
+          <figure class="photo ph-img" style="--w:3;--h:2"><span>Foto 4</span></figure>
+        </div>
+      </section>
     </section>
 
     <section id="chi-sono" class="about" aria-labelledby="chi-t">
-      <h2 id="chi-t" class="section-title">Chi sono</h2>
+      <h2 id="chi-t">Chi sono</h2>
       <div class="about-grid">
         <figure class="portrait ph-img" style="--w:4;--h:5"><span>Ritratto</span></figure>
         <div class="prose ph">
-          <p>[DA SCRIVERE] Biografia di Claudia (circa 150-250 parole).</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="servizi" class="services" aria-labelledby="servizi-t">
-      <h2 id="servizi-t" class="section-title">Servizi</h2>
-      <div class="services-grid">
-        <div>
-          <h3>Di cosa mi occupo</h3>
-          <ul class="ph">
-            <li>[DA SCRIVERE] Servizio 1</li>
-            <li>[DA SCRIVERE] Servizio 2</li>
-            <li>[DA SCRIVERE] Servizio 3</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Come lavoro</h3>
-          <ol class="ph">
-            <li>[DA SCRIVERE] Contatto e preventivo</li>
-            <li>[DA SCRIVERE] Scatto</li>
-            <li>[DA SCRIVERE] Consegna</li>
-          </ol>
-        </div>
-        <div>
-          <h3>Cosa non faccio</h3>
-          <ul class="ph">
-            <li>[DA SCRIVERE] Esempio di richiesta fuori dal mio ambito</li>
-          </ul>
+          <p>[DA SCRIVERE] Biografia di Claudia (circa 150-250 parole), dalla cartella Contenuti di Testo.</p>
         </div>
       </div>
     </section>
 
     <section id="contatti" class="contact" aria-labelledby="contatti-t">
-      <h2 id="contatti-t" class="section-title">Contatti</h2>
+      <h2 id="contatti-t">Contatti</h2>
       <p class="ph">[DA SCRIVERE] Frase di invito: per progetti, collaborazioni, richieste.</p>
       <p><a class="mail" href="mailto:info@example.com">info@example.com</a> <span class="ph">[email da confermare]</span></p>
       <ul class="social">
         <li><a href="#">Instagram</a> <span class="ph">[link da confermare]</span></li>
       </ul>
     </section>
-
-    <section class="series-view" id="serie-1" aria-labelledby="serie-1-t" tabindex="-1">
-      <div class="series-bar">
-        <a href="#lavori" class="back">← Tutti i lavori</a>
-        <span class="series-nav"><a href="#serie-4" aria-label="Serie precedente">‹</a><a href="#serie-2" aria-label="Serie successiva">›</a></span>
-      </div>
-      <header class="series-head">
-        <h2 id="serie-1-t">Titolo della serie 1</h2>
-        <p class="ph">[DA SCRIVERE] Anno, luogo e due o tre righe che raccontano la serie.</p>
-      </header>
-      <div class="gallery">
-          <figure class="photo" style="--w:1600;--h:1067">
-            <a href="/images/demo/serie-1-01.webp" data-caption="">
-              <img src="/images/demo/serie-1-01.webp" width="1600" height="1067" alt="Immagine di prova 1 della serie 1" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1067;--h:1600">
-            <a href="/images/demo/serie-1-02.webp" data-caption="">
-              <img src="/images/demo/serie-1-02.webp" width="1067" height="1600" alt="Immagine di prova 2 della serie 1" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1600;--h:1067">
-            <a href="/images/demo/serie-1-03.webp" data-caption="">
-              <img src="/images/demo/serie-1-03.webp" width="1600" height="1067" alt="Immagine di prova 3 della serie 1" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1400;--h:1400">
-            <a href="/images/demo/serie-1-04.webp" data-caption="">
-              <img src="/images/demo/serie-1-04.webp" width="1400" height="1400" alt="Immagine di prova 4 della serie 1" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1600;--h:1067">
-            <a href="/images/demo/serie-1-05.webp" data-caption="">
-              <img src="/images/demo/serie-1-05.webp" width="1600" height="1067" alt="Immagine di prova 5 della serie 1" loading="lazy">
-            </a>
-          </figure>
-      </div>
-    </section>
-    <section class="series-view" id="serie-2" aria-labelledby="serie-2-t" tabindex="-1">
-      <div class="series-bar">
-        <a href="#lavori" class="back">← Tutti i lavori</a>
-        <span class="series-nav"><a href="#serie-1" aria-label="Serie precedente">‹</a><a href="#serie-3" aria-label="Serie successiva">›</a></span>
-      </div>
-      <header class="series-head">
-        <h2 id="serie-2-t">Titolo della serie 2</h2>
-        <p class="ph">[DA SCRIVERE] Anno, luogo e due o tre righe che raccontano la serie.</p>
-      </header>
-      <div class="gallery">
-          <figure class="photo" style="--w:1600;--h:1067">
-            <a href="/images/demo/serie-2-01.webp" data-caption="">
-              <img src="/images/demo/serie-2-01.webp" width="1600" height="1067" alt="Immagine di prova 1 della serie 2" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1067;--h:1600">
-            <a href="/images/demo/serie-2-02.webp" data-caption="">
-              <img src="/images/demo/serie-2-02.webp" width="1067" height="1600" alt="Immagine di prova 2 della serie 2" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1600;--h:1067">
-            <a href="/images/demo/serie-2-03.webp" data-caption="">
-              <img src="/images/demo/serie-2-03.webp" width="1600" height="1067" alt="Immagine di prova 3 della serie 2" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1400;--h:1400">
-            <a href="/images/demo/serie-2-04.webp" data-caption="">
-              <img src="/images/demo/serie-2-04.webp" width="1400" height="1400" alt="Immagine di prova 4 della serie 2" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1600;--h:1067">
-            <a href="/images/demo/serie-2-05.webp" data-caption="">
-              <img src="/images/demo/serie-2-05.webp" width="1600" height="1067" alt="Immagine di prova 5 della serie 2" loading="lazy">
-            </a>
-          </figure>
-      </div>
-    </section>
-    <section class="series-view" id="serie-3" aria-labelledby="serie-3-t" tabindex="-1">
-      <div class="series-bar">
-        <a href="#lavori" class="back">← Tutti i lavori</a>
-        <span class="series-nav"><a href="#serie-2" aria-label="Serie precedente">‹</a><a href="#serie-4" aria-label="Serie successiva">›</a></span>
-      </div>
-      <header class="series-head">
-        <h2 id="serie-3-t">Titolo della serie 3</h2>
-        <p class="ph">[DA SCRIVERE] Anno, luogo e due o tre righe che raccontano la serie.</p>
-      </header>
-      <div class="gallery">
-          <figure class="photo" style="--w:1600;--h:1067">
-            <a href="/images/demo/serie-3-01.webp" data-caption="">
-              <img src="/images/demo/serie-3-01.webp" width="1600" height="1067" alt="Immagine di prova 1 della serie 3" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1067;--h:1600">
-            <a href="/images/demo/serie-3-02.webp" data-caption="">
-              <img src="/images/demo/serie-3-02.webp" width="1067" height="1600" alt="Immagine di prova 2 della serie 3" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1600;--h:1067">
-            <a href="/images/demo/serie-3-03.webp" data-caption="">
-              <img src="/images/demo/serie-3-03.webp" width="1600" height="1067" alt="Immagine di prova 3 della serie 3" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1400;--h:1400">
-            <a href="/images/demo/serie-3-04.webp" data-caption="">
-              <img src="/images/demo/serie-3-04.webp" width="1400" height="1400" alt="Immagine di prova 4 della serie 3" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1600;--h:1067">
-            <a href="/images/demo/serie-3-05.webp" data-caption="">
-              <img src="/images/demo/serie-3-05.webp" width="1600" height="1067" alt="Immagine di prova 5 della serie 3" loading="lazy">
-            </a>
-          </figure>
-      </div>
-    </section>
-    <section class="series-view" id="serie-4" aria-labelledby="serie-4-t" tabindex="-1">
-      <div class="series-bar">
-        <a href="#lavori" class="back">← Tutti i lavori</a>
-        <span class="series-nav"><a href="#serie-3" aria-label="Serie precedente">‹</a><a href="#serie-1" aria-label="Serie successiva">›</a></span>
-      </div>
-      <header class="series-head">
-        <h2 id="serie-4-t">Titolo della serie 4</h2>
-        <p class="ph">[DA SCRIVERE] Anno, luogo e due o tre righe che raccontano la serie.</p>
-      </header>
-      <div class="gallery">
-          <figure class="photo" style="--w:1600;--h:1067">
-            <a href="/images/demo/serie-4-01.webp" data-caption="">
-              <img src="/images/demo/serie-4-01.webp" width="1600" height="1067" alt="Immagine di prova 1 della serie 4" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1067;--h:1600">
-            <a href="/images/demo/serie-4-02.webp" data-caption="">
-              <img src="/images/demo/serie-4-02.webp" width="1067" height="1600" alt="Immagine di prova 2 della serie 4" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1600;--h:1067">
-            <a href="/images/demo/serie-4-03.webp" data-caption="">
-              <img src="/images/demo/serie-4-03.webp" width="1600" height="1067" alt="Immagine di prova 3 della serie 4" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1400;--h:1400">
-            <a href="/images/demo/serie-4-04.webp" data-caption="">
-              <img src="/images/demo/serie-4-04.webp" width="1400" height="1400" alt="Immagine di prova 4 della serie 4" loading="lazy">
-            </a>
-          </figure>
-          <figure class="photo" style="--w:1600;--h:1067">
-            <a href="/images/demo/serie-4-05.webp" data-caption="">
-              <img src="/images/demo/serie-4-05.webp" width="1600" height="1067" alt="Immagine di prova 5 della serie 4" loading="lazy">
-            </a>
-          </figure>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
-    <p>© 2026 Claudia Mazza. Tutte le fotografie sono protette dal diritto d'autore, ogni uso richiede un accordo scritto.</p>
+    <p>© <span id="anno">2026</span> Claudia Mazza. Tutte le fotografie sono protette dal diritto d'autore, ogni uso richiede un accordo scritto.</p>
     <p class="ph">[DA CONFERMARE] P.IVA e dati di legge, se Claudia fattura come professionista.</p>
   </footer>
 

@@ -25,7 +25,6 @@ if [ -n "$noalt" ]; then echo "ERRORE: immagini senza attributo alt:"; echo "$no
 
 # 5. Segnaposto ancora presenti (solo informativo: non blocca)
 ph=$(grep -rn 'DA SCRIVERE\|DA CONFERMARE\|ALT DA SCRIVERE\|noindex' public --include=*.html | wc -l | tr -d ' ')
-demo=$(grep -rn 'images/demo' public --include=*.html | wc -l | tr -d ' ')
-echo "Segnaposto/noindex ancora nel sito: $ph, riferimenti a immagini di prova: $demo (prima del lancio devono essere 0)"
+echo "Segnaposto/noindex ancora nel sito: $ph (prima del lancio devono essere 0)"
 
 [ $fail -eq 0 ] && echo "OK" || exit 1

@@ -4,7 +4,6 @@
   "type": "module",
   "description": "Strumenti locali per preparare le foto. Non fanno parte del sito e non girano su Cloudflare.",
   "dependencies": {
-    "@fontsource/cormorant-garamond": "^5.3.0",
     "sharp": "^0.34.0"
   }
 }

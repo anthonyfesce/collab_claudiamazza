@@ -1,11 +1,5 @@
-/* Impostazione dalla reference di Claudia: prima pagina con scritta minimale ma con carattere, poche parole,
-   molte immagini, copertine d'impatto con titolo, griglia simmetrica, scorrimento facile.
-   Colori e caratteri stanno tutti nei token qui sotto. */
-
-@font-face { font-family: "Cormorant Garamond"; font-weight: 300; font-style: normal; font-display: swap; src: url("/fonts/cormorant-garamond-latin-300-normal.woff2") format("woff2"); }
-@font-face { font-family: "Cormorant Garamond"; font-weight: 300; font-style: italic; font-display: swap; src: url("/fonts/cormorant-garamond-latin-300-italic.woff2") format("woff2"); }
-@font-face { font-family: "Cormorant Garamond"; font-weight: 400; font-style: normal; font-display: swap; src: url("/fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); }
-@font-face { font-family: "Cormorant Garamond"; font-weight: 500; font-style: normal; font-display: swap; src: url("/fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+/* Base provvisoria: neutra, la fotografia al centro. Colori e caratteri sono tutti nei token qui sotto:
+   dopo le reference di Claudia si cambiano solo questi valori. */
 
 :root {
   --bg: #f6f4f0;
@@ -15,93 +9,80 @@
   --accent: #171614;
   --ph: #e7e3db;
 
-  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-display: Georgia, "Times New Roman", serif;
   --font-text: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --gutter: clamp(16px, 4vw, 48px);
   --max: 1400px;
   --gap: 10px;
-  --row: 240px; /* altezza indicativa delle righe di foto nelle serie */
-  --header-h: 56px;
+  --row: 240px; /* altezza indicativa delle righe di foto */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-body { margin: 0; background: var(--bg); color: var(--ink); font: 1rem/1.65 var(--font-text); }
-body:has(.series-view:target) { overflow: hidden; } /* con una serie aperta la pagina sotto non scorre */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 1rem/1.65 var(--font-text);
+}
 
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-underline-offset: 3px; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.hero a:focus-visible { outline-color: #fff; }
 
-.skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--bg); padding: 8px 12px; z-index: 50; }
+.skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--bg); padding: 8px 12px; z-index: 20; }
 .skip:focus { left: 8px; top: 8px; }
 
 /* Intestazione */
 .site-header {
-  position: sticky; top: 0; z-index: 10; min-height: var(--header-h);
-  display: flex; justify-content: space-between; align-items: center; gap: 16px;
-  padding: 10px var(--gutter);
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  padding: 14px var(--gutter);
   background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
-.brand { font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; text-decoration: none; letter-spacing: .02em; }
-.site-header nav { display: flex; gap: clamp(12px, 3vw, 28px); font-size: .9rem; flex-wrap: wrap; justify-content: flex-end; }
+.brand { font-family: var(--font-display); font-size: 1.15rem; text-decoration: none; letter-spacing: .02em; }
+.site-header nav { display: flex; gap: clamp(14px, 3vw, 28px); font-size: .95rem; }
 .site-header nav a { text-decoration: none; padding: 4px 0; }
 .site-header nav a:hover { text-decoration: underline; }
 
-section[id] { scroll-margin-top: var(--header-h); }
-main > section:not(.hero):not(.series-view) { max-width: var(--max); margin: 0 auto; padding: clamp(56px, 9vw, 120px) var(--gutter); }
-main > section:not(.hero):not(.series-view) + section { border-top: 1px solid var(--line); }
+main > section { max-width: var(--max); margin: 0 auto; padding: clamp(48px, 9vw, 110px) var(--gutter); }
+main > section + section { border-top: 1px solid var(--line); }
+section[id] { scroll-margin-top: 56px; }
 
-h1, h2, h3 { font-family: var(--font-display); font-weight: 300; line-height: 1.05; margin: 0; }
-.section-title { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: clamp(28px, 5vw, 56px); letter-spacing: .01em; }
-h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 400; margin-bottom: 12px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.1; margin: 0; }
+h1 { font-size: clamp(2.6rem, 9vw, 6.5rem); letter-spacing: -.01em; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.6rem); margin-bottom: clamp(24px, 4vw, 48px); }
+h3 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); }
 
-/* Prima pagina: una scritta sola, grande, con carattere */
-.hero { position: relative; min-height: calc(100svh - var(--header-h)); display: grid; place-items: center; overflow: hidden; color: #fff; text-align: center; }
-.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(rgba(10, 8, 8, .30), rgba(10, 8, 8, .45)); }
-.hero-text { position: relative; z-index: 2; padding: 0 var(--gutter); }
-.hero h1 { font-size: clamp(3.2rem, 13vw, 9.5rem); letter-spacing: -.01em; text-shadow: 0 1px 24px rgba(0, 0, 0, .25); }
-.hero h1 em { font-style: italic; font-weight: 300; }
-.eyebrow { text-transform: uppercase; letter-spacing: .32em; font-size: .78rem; margin: 18px 0 0; padding-left: .32em; }
-.lead { max-width: 34rem; margin: 20px auto 0; font-size: clamp(1.05rem, 2vw, 1.25rem); }
-.hero .ph { color: rgba(255, 255, 255, .85); }
-.scroll-hint { position: absolute; z-index: 2; bottom: 22px; left: 50%; translate: -50% 0; color: #fff; font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; padding: 8px 12px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; color: var(--ink-soft); margin: 0 0 16px; }
+.lead { max-width: 38rem; font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--ink-soft); margin: 24px 0 0; }
+.hero { padding-top: clamp(64px, 14vw, 180px) !important; }
 
-/* Copertine: griglia simmetrica, immagine d'impatto e titolo */
-.covers { display: grid; grid-template-columns: 1fr; gap: var(--gap); }
-@media (min-width: 600px) { .covers { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
-.cover { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--ph); color: #fff; text-decoration: none; }
-.cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2, .6, .2, 1); }
-.cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 55%, rgba(8, 6, 6, .62)); }
-.cover-title { position: absolute; z-index: 1; left: 22px; right: 22px; bottom: 20px; font-family: var(--font-display); font-weight: 400; font-size: clamp(1.5rem, 3.2vw, 2.2rem); line-height: 1.1; }
-.cover:hover img, .cover:focus-visible img { transform: scale(1.035); }
-.cover:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+/* Serie e gallerie: righe giustificate in puro CSS, nessun ritaglio delle foto.
+   Ogni <figure> dichiara --w e --h (proporzioni reali) e la riga si adatta. */
+.series + .series { margin-top: clamp(48px, 8vw, 96px); }
+.series > header { display: grid; gap: 6px; margin-bottom: 20px; max-width: 40rem; }
+.series > header p { margin: 0; color: var(--ink-soft); }
 
-/* Serie aperta: sezione a tutto schermo mostrata dal link (#serie-N), funziona anche senza JavaScript */
-.series-view { display: none; position: fixed; inset: 0; z-index: 30; overflow-y: auto; background: var(--bg); padding: 0 var(--gutter) 64px; overscroll-behavior: contain; }
-.series-view:target { display: block; }
-.series-view:focus { outline: none; }
-.series-bar { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; margin: 0 calc(var(--gutter) * -1); padding: 12px var(--gutter); background: color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); font-size: .9rem; }
-.series-bar a { text-decoration: none; padding: 6px 10px; }
-.series-bar .back { padding-left: 0; }
-.series-nav { display: flex; gap: 4px; font-size: 1.6rem; line-height: 1; }
-.series-head { max-width: 44rem; padding: clamp(32px, 6vw, 72px) 0 clamp(20px, 4vw, 40px); }
-.series-head h2 { font-size: clamp(2.2rem, 6vw, 4rem); margin-bottom: 14px; }
-.series-head p { margin: 0; color: var(--ink-soft); }
-
-/* Righe di foto giustificate in CSS puro, senza ritagli: --w e --h sono le proporzioni reali */
-.gallery { display: flex; flex-wrap: wrap; gap: var(--gap); max-width: var(--max); margin: 0 auto; }
-.gallery::after { content: ""; flex-grow: 1000000; }
-.photo { margin: 0; flex-grow: calc(var(--w) / var(--h) * 100); flex-basis: calc(var(--w) / var(--h) * var(--row)); aspect-ratio: calc(var(--w) / var(--h)); min-width: 0; overflow: hidden; background: var(--ph); }
+.gallery { display: flex; flex-wrap: wrap; gap: var(--gap); }
+.gallery::after { content: ""; flex-grow: 1000000; } /* l'ultima riga non si stira */
+.photo {
+  margin: 0;
+  flex-grow: calc(var(--w) / var(--h) * 100);
+  flex-basis: calc(var(--w) / var(--h) * var(--row));
+  aspect-ratio: calc(var(--w) / var(--h));
+  min-width: 0;
+  overflow: hidden;
+  background: var(--ph);
+}
 .photo a { display: block; height: 100%; cursor: zoom-in; }
 .photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo figcaption { display: none; }
 
 /* Segnaposto: spariscono quando arrivano i contenuti veri */
 .ph-img { display: grid; place-items: center; color: var(--ink-soft); font-size: .85rem; border: 1px dashed var(--line); }
@@ -113,12 +94,8 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 400; margin-bottom: 1
 .prose { max-width: 40rem; font-size: 1.05rem; }
 .prose p { margin: 0 0 1.1em; }
 
-.services-grid { display: grid; gap: clamp(28px, 5vw, 56px); grid-template-columns: 1fr; }
-.services-grid ul, .services-grid ol { margin: 0; padding-left: 1.2em; }
-.services-grid li { margin-bottom: 6px; }
-
 .contact p { margin: 0 0 12px; max-width: 38rem; }
-.mail { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.8rem, 5vw, 2.8rem); }
+.mail { font-family: var(--font-display); font-size: clamp(1.4rem, 4vw, 2.2rem); }
 .social { list-style: none; padding: 0; margin: 20px 0 0; display: flex; gap: 20px; flex-wrap: wrap; }
 
 .site-footer { border-top: 1px solid var(--line); padding: 28px var(--gutter) 40px; font-size: .85rem; color: var(--ink-soft); max-width: var(--max); margin: 0 auto; }
@@ -137,10 +114,7 @@ h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 400; margin-bottom: 1
 
 @media (min-width: 820px) {
   .about-grid { grid-template-columns: minmax(260px, 420px) 1fr; }
-  .services-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 520px) {
   :root { --row: 160px; --gap: 6px; }
-  .site-header nav { gap: 12px; font-size: .82rem; }
-  .brand { font-size: 1.15rem; }
 }

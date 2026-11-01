@@ -1,36 +1,11 @@
-// Miglioramenti senza i quali il sito funziona comunque: le serie si aprono con i link (#serie-N)
-// e le foto grandi si aprono come immagine. Qui si aggiungono tastiera, fuoco e foto ingrandita.
+// Foto ingrandita. Senza JavaScript i link delle foto aprono comunque l'immagine grande.
 (() => {
-  // Serie aperta: sposta il fuoco dentro, chiudi con Esc, ripristina il fuoco sulla copertina
-  let lastCover = null;
-  document.addEventListener('click', (e) => {
-    const c = e.target.closest('a.cover');
-    if (c) lastCover = c;
-  });
-  const syncFocus = () => {
-    const open = document.querySelector('.series-view:target');
-    if (open) {
-      open.scrollTop = 0;
-      open.focus({ preventScroll: true });
-    } else if (lastCover) {
-      lastCover.focus({ preventScroll: true });
-      lastCover = null;
-    }
-  };
-  window.addEventListener('hashchange', syncFocus);
-  syncFocus();
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !document.getElementById('lightbox')?.open && document.querySelector('.series-view:target')) {
-      location.hash = '#lavori';
-    }
-  });
-
-  // Foto ingrandita
   const dialog = document.getElementById('lightbox');
   if (!dialog || typeof dialog.showModal !== 'function') return;
+
   const img = dialog.querySelector('img');
   const caption = dialog.querySelector('.lb-caption');
-  let links = [];
+  const links = [...document.querySelectorAll('.photo a')];
   let index = 0;
 
   const show = (i) => {
@@ -42,13 +17,12 @@
     caption.textContent = link.dataset.caption || '';
   };
 
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('.photo a');
-    if (!link) return;
-    e.preventDefault();
-    links = [...link.closest('.gallery').querySelectorAll('.photo a')];
-    show(links.indexOf(link));
-    dialog.showModal();
+  links.forEach((link, i) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      show(i);
+      dialog.showModal();
+    });
   });
 
   dialog.querySelector('.lb-close').addEventListener('click', () => dialog.close());
